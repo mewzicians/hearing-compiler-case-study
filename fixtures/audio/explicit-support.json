@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "source_format": "synthetic-scripted-sapi-ground-truth",
+  "description": "scripted speech; not MacWhisper output",
+  "hearing": {
+    "id": "speech-explicit-support",
+    "title": "Synthetic speech: explicit support and Q&A",
+    "date": "2026-10-06",
+    "committee": "Example Committee",
+    "source_file": "explicit-support.mp3"
+  },
+  "segments": [
+    {
+      "id": "explicit-support-s01",
+      "speaker": "Speaker A",
+      "text": "This is Representative Linden. This is a fictional hearing for software testing. We are discussing H.8101, a proposal about renewal reminders. We will hear from the next testifier, then ask a question about how the reminder would be delivered.",
+      "start": 0.5,
+      "end": 18.32
+    },
+    {
+      "id": "explicit-support-s02",
+      "speaker": "Speaker B",
+      "text": "I'm Naomi Finch with Example Community Help Center. I support H.8101. The reminder would put the renewal date and office telephone number on the same page. Families could check the deadline without searching several forms. A printed copy would also help residents who do not use an online account.",
+      "start": 18.82,
+      "end": 39.735
+    },
+    {
+      "id": "explicit-support-s03",
+      "speaker": "Speaker A",
+      "text": "Who receives the printed reminder, and does receiving one change the deadline?",
+      "start": 40.235,
+      "end": 45.405
+    },
+    {
+      "id": "explicit-support-s04",
+      "speaker": "Speaker B",
+      "text": "Every applicant could choose a printed reminder. It would arrive at least fourteen days before the renewal date. The reminder would not extend that date. Staff would still explain the ordinary renewal steps, and an applicant who needs help could call the number printed on the page.",
+      "start": 45.905,
+      "end": 63.415
+    },
+    {
+      "id": "explicit-support-s05",
+      "speaker": "Speaker A",
+      "text": "Thank you. That concludes this fictional testimony and its question exchange.",
+      "start": 63.915,
+      "end": 69.75
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "source_format": "synthetic-scripted-sapi-ground-truth",
+  "description": "scripted speech; not MacWhisper output",
+  "hearing": {
+    "id": "speech-legislator-role-change",
+    "title": "Synthetic speech: legislator changes activity",
+    "date": "2026-10-06",
+    "committee": "Example Committee",
+    "source_file": "legislator-role-change.mp3"
+  },
+  "segments": [
+    {
+      "id": "legislator-role-change-s01",
+      "speaker": "Speaker A",
+      "text": "I am Senator Marlow. I am here to testify in this fictional hearing. I support H.8104 because it keeps a paper application route. A resident should be able to finish the process without opening an online account. I will now yield to the next testifier.",
+      "start": 0.5,
+      "end": 19.015
+    },
+    {
+      "id": "legislator-role-change-s02",
+      "speaker": "Speaker B",
+      "text": "I'm Ada Quinn with Example Application Clinic. I support H.8104. Our example clinic helps residents understand the form, but each resident reviews and signs their own application. The bill would make the same paper route available at every participating office.",
+      "start": 19.515,
+      "end": 37.875
+    },
+    {
+      "id": "legislator-role-change-s03",
+      "speaker": "Speaker A",
+      "text": "I am now asking a question. Who may help a resident fill in the form, and who signs it?",
+      "start": 38.375,
+      "end": 45.08
+    },
+    {
+      "id": "legislator-role-change-s04",
+      "speaker": "Speaker B",
+      "text": "A trained clerk may help fill it in. The resident signs it. Helping with the form does not authorize the clerk to choose answers for the resident or sign on their behalf. That distinction is an important condition of the example.",
+      "start": 45.58,
+      "end": 60.435
+    },
+    {
+      "id": "legislator-role-change-s05",
+      "speaker": "Speaker A",
+      "text": "Does that assistance cost the resident anything?",
+      "start": 60.935,
+      "end": 64.235
+    },
+    {
+      "id": "legislator-role-change-s06",
+      "speaker": "Speaker B",
+      "text": "In this fictional example the assistance has no fee. I am describing our example process, not independently verifying a legal rule. That concludes this generated testimony and its follow-up exchange.",
+      "start": 64.735,
+      "end": 78.65
+    }
+  ]
+}

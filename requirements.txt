@@ -1,0 +1,2 @@
+# Word export only. Other local workflows remain available without this package.
+python-docx==1.2.0

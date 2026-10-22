@@ -1,0 +1,85 @@
+# Secrets and machine-local configuration. Templates must contain no secrets.
+.env
+.env.*
+!.env.example
+!.env.template
+.secrets/
+/credentials/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Dependency environments and caches (stack remains undecided).
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.cache/
+.npm/
+.pnpm-store/
+
+# Build outputs and generated validation reports.
+dist/
+build/
+out/
+target/
+coverage/
+.nyc_output/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+playwright-report/
+test-results/
+
+# Local hearing data and MacWhisper working files.
+# Use these directories for real inputs/outputs; commit synthetic fixtures elsewhere.
+/.local/
+/data/
+/recordings/
+/transcripts/
+/exports/
+/macwhisper-temp/
+/tmp/
+/temp/
+/.scratch/
+/scratch/
+*.mp3
+*.wav
+*.m4a
+*.aac
+*.flac
+*.aiff
+*.aif
+*.mp4
+*.mov
+
+# Exactly three small, fictional speech fixtures for developer/Mac testing.
+# Never expand this exception to real hearing recordings.
+!/fixtures/audio/explicit-support.mp3
+!/fixtures/audio/multi-bill-conditional.mp3
+!/fixtures/audio/legislator-role-change.mp3
+
+# Local databases, journals, and SQLite sidecars.
+# Any intentional test fixture needs an explicit, narrow exception.
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+
+# Local logs, temporary files, and OS metadata.
+*.log
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+
+# Local Claude Code settings and agent worktrees
+.claude/

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "description": "Unheard name, organization and bill number; implied position; explicit overlap and a question without an answer.",
+  "hearing": {
+    "id": "uncertain-testimony",
+    "title": "Sample Hearing C · Uncertain details",
+    "date": "2026-03-20",
+    "committee": "Example Consumer Committee",
+    "source_file": "sample_consumer_2026-03-20.mp3"
+  },
+  "segments": [
+    {"id": "u01", "start": 20, "end": 32, "speaker": "Speaker 2", "text": "I'm [inaudible name] with [unclear organization]."},
+    {"id": "u02", "start": 34, "end": 46, "speaker": "Speaker 2", "text": "Regarding H.[inaudible number], families need clearer notices."},
+    {"id": "u03", "start": 44, "end": 50, "speaker": "Speaker 2", "text": "[overlap] I welcome the goal, but the details need more work."},
+    {"id": "u04", "start": 52, "end": 62, "speaker": "Speaker 3", "text": "What deadline would be reasonable?"},
+    {"id": "u05", "start": 70, "end": 76, "speaker": "Chair", "text": "The hearing is adjourned."}
+  ]
+}

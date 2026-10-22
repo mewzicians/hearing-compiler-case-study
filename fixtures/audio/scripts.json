@@ -1,0 +1,124 @@
+{
+  "script_version": 1,
+  "recordings": [
+    {
+      "filename": "explicit-support.mp3",
+      "id": "speech-explicit-support",
+      "title": "Synthetic speech: explicit support and Q&A",
+      "synthetic": true,
+      "ground_truth": "scripted speech; not MacWhisper output",
+      "voice_map": {
+        "Speaker A": "Microsoft David Desktop",
+        "Speaker B": "Microsoft Zira Desktop"
+      },
+      "turns": [
+        {
+          "id": "explicit-support-s01",
+          "speaker": "Speaker A",
+          "text": "This is Representative Linden. This is a fictional hearing for software testing. We are discussing H.8101, a proposal about renewal reminders. We will hear from the next testifier, then ask a question about how the reminder would be delivered."
+        },
+        {
+          "id": "explicit-support-s02",
+          "speaker": "Speaker B",
+          "text": "I'm Naomi Finch with Example Community Help Center. I support H.8101. The reminder would put the renewal date and office telephone number on the same page. Families could check the deadline without searching several forms. A printed copy would also help residents who do not use an online account."
+        },
+        {
+          "id": "explicit-support-s03",
+          "speaker": "Speaker A",
+          "text": "Who receives the printed reminder, and does receiving one change the deadline?"
+        },
+        {
+          "id": "explicit-support-s04",
+          "speaker": "Speaker B",
+          "text": "Every applicant could choose a printed reminder. It would arrive at least fourteen days before the renewal date. The reminder would not extend that date. Staff would still explain the ordinary renewal steps, and an applicant who needs help could call the number printed on the page."
+        },
+        {
+          "id": "explicit-support-s05",
+          "speaker": "Speaker A",
+          "text": "Thank you. That concludes this fictional testimony and its question exchange."
+        }
+      ]
+    },
+    {
+      "filename": "multi-bill-conditional.mp3",
+      "id": "speech-multi-bill-conditional",
+      "title": "Synthetic speech: multiple bills and conditional support",
+      "synthetic": true,
+      "ground_truth": "scripted speech; not MacWhisper output",
+      "voice_map": {
+        "Speaker A": "Microsoft David Desktop",
+        "Speaker B": "Microsoft Zira Desktop"
+      },
+      "turns": [
+        {
+          "id": "multi-bill-conditional-s01",
+          "speaker": "Speaker A",
+          "text": "This is Senator Linden. This fictional hearing covers H.8102 and S.8103. The bills concern application notices. Please distinguish your position on each bill and keep any conditions clear. These recordings are generated test fixtures rather than a real committee hearing."
+        },
+        {
+          "id": "multi-bill-conditional-s02",
+          "speaker": "Speaker B",
+          "text": "I'm Elise Turner with Example Neighborhood Desk. I support H.8102 only if the emergency repair exemption is added. Without that exemption, a family might miss the deadline while dealing with an urgent repair. My support is conditional, and the condition should not disappear from the notes."
+        },
+        {
+          "id": "multi-bill-conditional-s03",
+          "speaker": "Speaker B",
+          "text": "I oppose S.8103 in its current form because it removes the mailed copy. Some applicants cannot reliably receive an electronic message. A nearby group has said it supports that bill, but that is their position, not mine. Keep a printed delivery option before advancing it."
+        },
+        {
+          "id": "multi-bill-conditional-s04",
+          "speaker": "Speaker A",
+          "text": "Would a translated copy address your concern about S.8103?"
+        },
+        {
+          "id": "multi-bill-conditional-s05",
+          "speaker": "Speaker B",
+          "text": "Translation would help, but it would not replace paper delivery. I would reconsider the bill if both options were retained. I have not changed my position on the current version. That is the end of this fictional test testimony."
+        }
+      ]
+    },
+    {
+      "filename": "legislator-role-change.mp3",
+      "id": "speech-legislator-role-change",
+      "title": "Synthetic speech: legislator changes activity",
+      "synthetic": true,
+      "ground_truth": "scripted speech; not MacWhisper output",
+      "voice_map": {
+        "Speaker A": "Microsoft David Desktop",
+        "Speaker B": "Microsoft Zira Desktop"
+      },
+      "turns": [
+        {
+          "id": "legislator-role-change-s01",
+          "speaker": "Speaker A",
+          "text": "I am Senator Marlow. I am here to testify in this fictional hearing. I support H.8104 because it keeps a paper application route. A resident should be able to finish the process without opening an online account. I will now yield to the next testifier."
+        },
+        {
+          "id": "legislator-role-change-s02",
+          "speaker": "Speaker B",
+          "text": "I'm Ada Quinn with Example Application Clinic. I support H.8104. Our example clinic helps residents understand the form, but each resident reviews and signs their own application. The bill would make the same paper route available at every participating office."
+        },
+        {
+          "id": "legislator-role-change-s03",
+          "speaker": "Speaker A",
+          "text": "I am now asking a question. Who may help a resident fill in the form, and who signs it?"
+        },
+        {
+          "id": "legislator-role-change-s04",
+          "speaker": "Speaker B",
+          "text": "A trained clerk may help fill it in. The resident signs it. Helping with the form does not authorize the clerk to choose answers for the resident or sign on their behalf. That distinction is an important condition of the example."
+        },
+        {
+          "id": "legislator-role-change-s05",
+          "speaker": "Speaker A",
+          "text": "Does that assistance cost the resident anything?"
+        },
+        {
+          "id": "legislator-role-change-s06",
+          "speaker": "Speaker B",
+          "text": "In this fictional example the assistance has no fee. I am describing our example process, not independently verifying a legal rule. That concludes this generated testimony and its follow-up exchange."
+        }
+      ]
+    }
+  ]
+}

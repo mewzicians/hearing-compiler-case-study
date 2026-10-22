@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "description": "Deliberately invalid chronology to demonstrate isolated failure and corrected-input retry.",
+  "hearing": {
+    "id": "broken-order",
+    "title": "Sample Hearing G · Input needs repair",
+    "date": "2026-03-24",
+    "committee": "Example Committee",
+    "source_file": "sample_broken_2026-03-24.mp3"
+  },
+  "segments": [
+    {"id": "b01", "start": 30, "end": 40, "speaker": "Speaker 2", "text": "I'm Quinn Vale with Example Civic Forum."},
+    {"id": "b02", "start": 10, "end": 20, "speaker": "Speaker 2", "text": "I support H.7007."}
+  ]
+}

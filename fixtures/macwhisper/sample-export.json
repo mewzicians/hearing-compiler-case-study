@@ -1,0 +1,9 @@
+{
+  "text": "I'm Alex Morgan with Example Legal Services. I support H.1234.\nThe proposal would expand access to legal assistance.\nWho would qualify for assistance?\nResidents who meet the bill's income criteria.",
+  "segments": [
+    {"id": "mw01", "start": 4994000, "end": 5008000, "text": "I'm Alex Morgan with Example Legal Services. I support H.1234.", "speaker": "Speaker 2", "words": [{"text": "Alex", "start": 4995000, "end": 4995600}]},
+    {"id": "mw02", "start": 5010000, "end": 5027000, "text": "The proposal would expand access to legal assistance.", "speaker": "Speaker 2"},
+    {"id": "mw03", "start": 5052000, "end": 5061000, "text": "Who would qualify for assistance?", "speaker": "Speaker 3"},
+    {"id": "mw04", "start": 5068000, "end": 5081000, "text": "Residents who meet the bill's income criteria.", "speaker": "Speaker 2"}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "description": "Testimony with no questions. Missing organization and mixed support/opposition must remain visible.",
+  "hearing": {
+    "id": "no-questions",
+    "title": "Sample Hearing F · Testimony only",
+    "date": "2026-03-23",
+    "committee": "Example Education Committee",
+    "source_file": "sample_education_2026-03-23.mp3"
+  },
+  "segments": [
+    {"id": "n01", "start": 10, "end": 18, "speaker": "Speaker 2", "text": "My name is Riley Chen."},
+    {"id": "n02", "start": 20, "end": 28, "speaker": "Speaker 2", "text": "I support H.6006."},
+    {"id": "n03", "start": 30, "end": 40, "speaker": "Speaker 2", "text": "I oppose H.6006 unless the funding provision changes."},
+    {"id": "n04", "start": 43, "end": 53, "speaker": "Speaker 2", "text": "Stable funding would help schools plan their services."},
+    {"id": "n05", "start": 56, "end": 62, "speaker": "Chair", "text": "Thank you. The hearing is adjourned."}
+  ]
+}

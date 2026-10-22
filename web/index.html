@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hearing Compiler</title>
+  <script src="/theme.js"></script>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/review_focus.js" defer></script>
+  <script src="/app.js" defer></script>
+  <script src="/rich.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to hearing workspace</a>
+  <header class="app-bar">
+    <a class="brand" href="#review">
+      <svg viewBox="0 0 40 34" aria-hidden="true"><path d="M3 14v6m6-12v18m6-22v26m6-17v8m6-15v22m6-18v14m6-10v6"/></svg>
+      <span>Hearing Compiler</span>
+    </a>
+    <nav aria-label="Workspace">
+      <button type="button" data-view="hearings">Hearings</button>
+      <button type="button" data-view="review">Review</button>
+      <button type="button" data-view="output">Output</button>
+    </nav>
+    <span class="local-badge"><button type="button" class="text-button" data-action="backup">Backup and recovery</button><button type="button" class="text-button" data-action="extraction">AI extraction</button><button type="button" class="text-button" data-action="connection">MacWhisper connection</button><button type="button" class="text-button" data-action="stop">Stop app</button></span>
+    <button type="button" id="theme-toggle" class="secondary small" aria-pressed="false">Dark mode</button>
+    <span id="theme-status" class="muted theme-status" role="status" hidden></span>
+    <span id="app-version" class="app-version" title="App version"></span>
+  </header>
+  <main id="main" tabindex="-1">
+    <div id="update-note" class="update-note" role="status" hidden></div>
+    <div class="prototype-note" role="note">
+      <span class="note-icon" aria-hidden="true">i</span>
+      <span id="extraction-note"><strong>Human review required.</strong> Draft extraction currently uses limited rules. Check the transcript and source audio for errors and omissions before copying notes.</span>
+    </div>
+    <div id="global-error" class="error-banner" role="alert" hidden></div>
+    <section id="hearings-view" hidden aria-labelledby="queue-title"></section>
+    <section id="review-view" aria-labelledby="review-title"></section>
+    <section id="audio-player" class="card audio-player" aria-label="Source recording playback" hidden>
+      <audio id="source-audio" preload="metadata"></audio>
+      <div class="player-heading"><strong class="player-now" id="player-now" hidden></strong><span class="player-source" id="player-source"></span></div>
+      <div class="player-controls">
+        <button type="button" class="secondary player-skip" id="audio-back" data-audio="back" aria-label="Back 10 seconds" title="Back 10 seconds">−10 s</button>
+        <button type="button" class="play-button" id="audio-play" aria-label="Play source audio">▶</button>
+        <button type="button" class="secondary player-skip" id="audio-forward" data-audio="forward" aria-label="Forward 10 seconds" title="Forward 10 seconds">+10 s</button>
+        <span class="player-time" id="audio-time">00:00:00</span>
+        <input id="audio-seek" type="range" min="0" max="1" step="0.1" value="0" aria-label="Audio playback position">
+        <span class="player-time" id="audio-duration">00:00:00</span>
+        <label for="audio-speed" class="speed-label">Speed</label>
+        <select id="audio-speed" aria-label="Playback speed"><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select>
+        <input id="audio-volume" type="range" min="0" max="1" step="0.05" value="1" aria-label="Audio volume">
+      </div>
+      <p id="audio-error" class="error-text" role="alert" hidden></p>
+    </section>
+    <section id="output-view" hidden aria-labelledby="output-title"></section>
+  </main>
+  <footer class="app-footer">
+    <span>Local hearing workspace <span aria-hidden="true">·</span> Human review required</span>
+    <span id="save-status" role="status">Connecting to local workspace…</span>
+    <button type="button" class="text-button" data-action="stop">Stop app</button>
+  </footer>
+  <div id="toast" role="status" class="toast" hidden></div>
+  <input id="import-files" type="file" accept=".json,application/json" multiple hidden>
+  <input id="retry-file" type="file" accept=".json,application/json" hidden>
+  <input id="macwhisper-file" type="file" accept=".json,application/json" hidden>
+  <input id="text-files" type="file" accept=".txt,.srt,.vtt,text/plain,text/vtt" multiple hidden>
+  <input id="audio-files" type="file" accept=".mp3,.wav,.m4a,audio/mpeg,audio/wav,audio/mp4" multiple hidden>
+  <input id="audio-folder" type="file" webkitdirectory multiple hidden>
+  <input id="attach-audio-file" type="file" accept=".mp3,.wav,.m4a" hidden>
+  <input id="attach-transcript-file" type="file" accept=".json,.txt,.srt,.vtt,application/json,text/plain,text/vtt" hidden>
+  <dialog id="text-dialog">
+    <form id="text-form">
+      <div class="dialog-heading"><h2>Import transcript files</h2><button class="icon-button" type="button" id="close-text" aria-label="Close text import">×</button></div>
+      <p class="muted">Use UTF-8 .txt, .srt or .vtt exports. Original text is preserved. Subtitle cue times can link to attached audio; check alignment against the original recording. TXT has no validated times, and written times in it are not converted to links. Speaker turns remain unavailable in these imports.</p>
+      <label for="text-committee">Committee tag for this batch</label><input id="text-committee" required maxlength="200">
+      <div id="text-file-details"></div>
+      <label class="check-label"><input id="text-public" type="checkbox" required> These are public hearing transcripts.</label>
+      <p id="text-error" class="error-text" role="alert" hidden></p>
+      <p id="text-progress" class="muted" role="status"></p>
+      <div class="dialog-actions"><button class="secondary" type="button" id="cancel-text">Cancel</button><button class="primary" type="submit" id="save-text">Import text files</button></div>
+    </form>
+  </dialog>
+  <dialog id="audio-import-dialog">
+    <form id="audio-import-form">
+      <div class="dialog-heading"><h2>Add hearing recordings</h2><button class="icon-button" type="button" id="close-audio-import" aria-label="Close recording intake">×</button></div>
+      <p class="muted">Check the hearing dates and titles. Dates found in filenames are suggestions; confirm them before adding the batch.</p>
+      <label for="audio-committee">Committee tag for this batch</label><input id="audio-committee" required maxlength="200">
+      <div id="audio-file-details"></div>
+      <label class="check-label"><input id="audio-public" type="checkbox" required> These are public hearing recordings. Private office and constituent material is outside this workflow.</label>
+      <p id="audio-import-error" class="error-text" role="alert" hidden></p>
+      <p id="upload-progress" class="muted" role="status"></p>
+      <div class="dialog-actions"><button class="secondary" type="button" id="cancel-audio-import">Cancel</button><button class="primary" type="submit" id="save-audio-import">Add recordings</button></div>
+    </form>
+  </dialog>
+  <dialog id="connection-dialog">
+    <div class="dialog-heading"><h2>MacWhisper connection</h2><button class="icon-button" type="button" id="close-connection" aria-label="Close connection settings">×</button></div>
+    <p id="connection-status" class="muted"></p>
+    <p>MacWhisper documents TXT/SRT/VTT CLI output without Pro. Use SRT without speaker detection to try the Free route, or JSON with speaker detection if your edition and model support it. Verify the installed version and formats on this Mac. Pro activation stays inside MacWhisper; this local connection has no separate API key.</p>
+    <p class="muted">On the Mac, install the command-line tool in MacWhisper → Settings → Advanced. Activate Pro in MacWhisper's own Pro settings.</p>
+    <button class="secondary" type="button" id="check-connection">Check connection and models</button>
+    <form id="connection-form" hidden>
+      <label for="transcription-model">Installed local transcription model</label><select id="transcription-model" required></select>
+      <label for="transcription-format">Transcript format</label><select id="transcription-format"><option value="srt">SRT · Free route, no speaker detection</option><option value="json">JSON · Pro and speaker detection</option></select>
+      <p id="connection-version" class="muted"></p>
+      <button class="primary" type="submit" id="save-connection">Use this model</button>
+    </form>
+    <p id="connection-error" class="error-text" role="alert" hidden></p>
+  </dialog>
+  <input id="restore-workspace-file" type="file" accept=".zip,application/zip" hidden>
+  <dialog id="backup-dialog">
+    <div class="dialog-heading"><h2>Workspace backup and recovery</h2><button class="icon-button" type="button" id="close-backup" aria-label="Close backup settings">×</button></div>
+    <p>A full backup includes saved hearings, original transcripts, corrections, review history and managed recordings. Note JSON/Word exports are separate readable copies.</p>
+    <p id="workspace-location" class="muted"></p>
+    <p>Save the backup in a separate local location. To restore, open a new empty workspace; existing hearings will never be replaced.</p>
+    <p id="backup-error" class="error-text" role="alert" hidden></p>
+    <p id="backup-progress" class="muted" role="status"></p>
+    <div class="dialog-actions"><button class="secondary" type="button" id="restore-workspace">Restore full backup into empty workspace</button><button class="primary" type="button" id="download-backup">Download full workspace ZIP</button></div>
+  </dialog>
+  <dialog id="extraction-dialog">
+    <form id="extraction-form">
+      <div class="dialog-heading"><h2>AI drafting</h2><button type="button" class="icon-button" id="close-extraction" aria-label="Close extraction settings">×</button></div>
+      <p>Choose how new hearing drafts are written. Every draft still needs your review: items the AI wasn't sure about are marked ⚠ (Next ⚠ jumps to them), hearing-wide checks are listed under <strong>Other things to check</strong>, and timestamps jump to the audio. Existing completed reviews are kept.</p>
+      <label for="extraction-provider">Draft method</label><select id="extraction-provider"><option value="rules">Basic rules (no AI; finds very little)</option><option value="gemini">Gemini (sends public hearing text to Google)</option></select>
+      <div id="gemini-settings">
+        <label for="extraction-model">Model</label><select id="extraction-model"><option value="gemini-3.8-flash">Gemini 3.8 Flash</option></select>
+        <label for="gemini-key">Gemini API key</label><input id="gemini-key" type="password" autocomplete="off" spellcheck="false" placeholder="Paste the key here">
+        <p id="gemini-key-status" class="muted"></p>
+        <button type="button" class="text-button" id="forget-gemini-key" hidden>Remove the saved key</button>
+        <p class="muted">Only for public hearings. The transcript text is sent to Google's Gemini API, and the key's account is billed, about $0.15–$0.50 per hearing. A 2-hour hearing takes a few minutes. The key is saved in this Mac's Keychain, not in hearing files, exports or backups.</p>
+      </div>
+      <p id="extraction-error" class="error-text" role="alert" hidden></p>
+      <div class="dialog-actions"><button type="button" class="secondary" id="cancel-extraction">Cancel</button><button class="primary" type="submit">Use for new drafts and failed retries</button></div>
+    </form>
+  </dialog>
+  <dialog id="edit-dialog">
+    <form id="edit-form">
+      <div class="dialog-heading"><h2 id="edit-title">Review field</h2><button class="icon-button" type="button" id="close-dialog" aria-label="Close field editor">×</button></div>
+      <p id="original-value" class="muted"></p>
+      <div class="dialog-listen" id="edit-listen" data-listen-bar hidden><button type="button" class="secondary small" data-audio="listen">▶ Listen</button><button type="button" class="secondary small" data-audio="toggle" aria-label="Play the recording">Play</button><button type="button" class="secondary small" data-audio="back" aria-label="Back 10 seconds">−10 s</button><button type="button" class="secondary small" data-audio="forward" aria-label="Forward 10 seconds">+10 s</button><span class="player-time" data-audio-time>0:00</span></div>
+      <label for="edit-value">Corrected value</label>
+      <textarea id="edit-value" rows="4" autocorrect="off" autocapitalize="off"></textarea>
+      <select id="position-value" hidden aria-label="Corrected position"><option>Support</option><option>Oppose</option><option>Unclear</option></select>
+      <label id="organization-applicability" class="check-label" hidden><input id="organization-na" type="checkbox"> I reviewed this testimony; an organization is not applicable.</label>
+      <label for="edit-review">Review state</label>
+      <select id="edit-review"><option value="NEEDS_REVIEW">Needs review</option><option value="UNRESOLVED">Unresolved</option><option value="APPROVED">Approved by me</option></select>
+      <details class="evidence-picker"><summary>Supporting transcript evidence</summary><p class="muted">Choose the segments that support this field. This does not change the transcript.</p><div id="edit-evidence" class="segment-choices"></div></details>
+      <p class="muted">Blank values stay unknown unless an organization is explicitly reviewed as not applicable. Changing the evidence returns this field to review unless you choose Approved by me.</p>
+      <p id="edit-error" class="error-text" role="alert" hidden></p>
+      <div class="dialog-actions"><button class="secondary" type="button" id="cancel-edit">Cancel</button><button class="primary" id="save-edit" type="submit">Save correction</button></div>
+    </form>
+  </dialog>
+  <dialog id="structure-dialog" class="structure-dialog">
+    <form id="structure-form">
+      <div class="dialog-heading"><h2 id="structure-title">Repair hearing draft</h2><button class="icon-button" type="button" id="close-structure" aria-label="Close draft repair">×</button></div>
+      <p id="structure-description" class="muted"></p>
+      <div class="dialog-listen" id="structure-listen" data-listen-bar hidden><button type="button" class="secondary small" data-audio="listen">▶ Listen</button><button type="button" class="secondary small" data-audio="toggle" aria-label="Play the recording">Play</button><button type="button" class="secondary small" data-audio="back" aria-label="Back 10 seconds">−10 s</button><button type="button" class="secondary small" data-audio="forward" aria-label="Forward 10 seconds">+10 s</button><span class="player-time" data-audio-time>0:00</span></div>
+      <div id="structure-fields"></div>
+      <p id="structure-error" class="error-text" role="alert" hidden></p>
+      <div class="dialog-actions"><button class="secondary" type="button" id="cancel-structure">Cancel</button><button class="primary" id="save-structure" type="submit">Save repair</button></div>
+    </form>
+  </dialog>
+  <dialog id="retry-dialog">
+    <div class="dialog-heading"><h2>Retry failed hearing</h2><button class="icon-button" type="button" id="close-retry" aria-label="Close retry dialog">×</button></div>
+    <p id="retry-error" class="error-text"></p>
+    <p>Fix the transcript JSON, keeping the same hearing id, and choose the corrected file. Other hearings and review edits are preserved.</p>
+    <div class="dialog-actions"><button class="secondary" type="button" id="retry-original">Retry original</button><button class="primary" type="button" id="choose-replacement">Choose corrected JSON</button></div>
+  </dialog>
+  <dialog id="macwhisper-dialog">
+    <form id="macwhisper-form">
+      <div class="dialog-heading"><h2>Import MacWhisper transcript</h2><button class="icon-button" type="button" id="close-macwhisper" aria-label="Close MacWhisper import">×</button></div>
+      <p class="muted">Choose JSON exported with speaker detection. Hearing details come from you; the export does not establish the committee or date.</p>
+      <label for="mw-title">Hearing title</label><input id="mw-title" required maxlength="200">
+      <label for="mw-date">Hearing date</label><input id="mw-date" type="date" required>
+      <label for="mw-committee">Committee tag</label><input id="mw-committee" required maxlength="200">
+      <label for="mw-source">Source recording or export reference</label><input id="mw-source" required maxlength="300">
+      <label class="check-label"><input id="mw-public" type="checkbox" required> This transcript is from a public hearing.</label>
+      <p class="muted">Private office and constituent material is outside this workflow. Unknown speaker identities stay unresolved.</p>
+      <p id="mw-error" class="error-text" role="alert" hidden></p>
+      <div class="dialog-actions"><button class="secondary" type="button" id="cancel-macwhisper">Cancel</button><button class="primary" type="submit" id="save-macwhisper">Import draft</button></div>
+    </form>
+  </dialog>
+</body>
+</html>

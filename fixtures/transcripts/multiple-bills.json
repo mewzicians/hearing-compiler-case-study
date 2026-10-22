@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "description": "Two witnesses; different positions on different bills; a named legislator and a later introduction.",
+  "hearing": {
+    "id": "multiple-bills",
+    "title": "Sample Hearing B · Multiple bills",
+    "date": "2026-03-19",
+    "committee": "Example Housing Committee",
+    "source_file": "sample_housing_2026-03-19.mp3"
+  },
+  "segments": [
+    {"id": "m01", "start": 10, "end": 15, "speaker": "Speaker 1", "text": "This is Representative Ellis."},
+    {"id": "m02", "start": 20, "end": 27, "speaker": "Speaker 2", "text": "I'm Sam Rivera with Example Housing Alliance."},
+    {"id": "m03", "start": 28, "end": 39, "speaker": "Speaker 2", "text": "I support H.1001 and oppose S.2002."},
+    {"id": "m04", "start": 40, "end": 50, "speaker": "Speaker 2", "text": "H.1001 would make application notices easier to understand."},
+    {"id": "m05", "start": 51, "end": 60, "speaker": "Speaker 2", "text": "S.2002 would add reporting work for small organizations."},
+    {"id": "m06", "start": 65, "end": 74, "speaker": "Speaker 1", "text": "What would H.1001 change for applicants?"},
+    {"id": "m07", "start": 76, "end": 88, "speaker": "Speaker 2", "text": "Applicants would receive one plain-language notice."},
+    {"id": "m08", "start": 90, "end": 95, "speaker": "Chair", "text": "Our next witness may begin."},
+    {"id": "m09", "start": 100, "end": 110, "speaker": "Speaker 4", "text": "I oppose H.1001 because it leaves the appeal process unchanged."},
+    {"id": "m10", "start": 112, "end": 120, "speaker": "Speaker 4", "text": "My name is Taylor Park from Example Tenant Forum."}
+  ]
+}

@@ -1,0 +1,95 @@
+Hearing Compiler — Apple Silicon Mac prototype
+
+First install
+1. Unzip this download and drag Hearing Compiler into Applications.
+2. Double-click Hearing Compiler -> macOS says it could not verify the app.
+   Click Done (not Move to Trash). Open System Settings > Privacy & Security,
+   click Open Anyway, then Open Anyway again and enter your Mac password
+   -> your browser opens the local workspace. Python is bundled; you don't
+   need Terminal. If no tab opens within a minute, stop and report it. If
+   macOS says the app is damaged, don't open it; report it.
+3. Turn on AI drafts first: click AI extraction, set Draft method to Gemini,
+   paste the API key you were given, then click Use for new drafts and failed
+   retries. The key is kept in this Mac's Keychain. Public hearings only.
+4. Add recordings (Add MP3 files) or import a MacWhisper TXT, SRT/VTT or JSON
+   export. MacWhisper is a separate installation, not included in this ZIP.
+   In MacWhisper, use Large V3 Turbo if it isn't marked Pro, otherwise Small
+   (English Only); Base and Tiny mishear more names and bill numbers. Don't
+   buy anything. Paste the hearing's malegislature.gov page link when you
+   first add a recording: adding the same MP3 again later doesn't add it.
+
+While hearings are processing
+- Keep the Mac plugged in with the lid open -> while hearings are processing,
+  the app keeps the Mac from going to sleep by itself (the screen may still
+  turn off). Closing the lid still puts it to sleep: processing then pauses
+  until you wake it, and a hearing can stay on Analyzing for up to about 20
+  minutes before it finishes by itself.
+
+Review and copy each finished draft
+- Click Next ⚠ -> the page moves to an item marked ⚠. Click its ▶ time to
+  hear that moment, then click Approve (or Edit, fix it and choose Approved
+  by me). The player at the bottom of the page has −10 s and +10 s, and the
+  Edit window has its own Listen and Pause.
+- A ⚠ that starts with Second check comes from a second AI pass that compared
+  the draft with the transcript. It quotes what was actually said: listen,
+  then fix the item or approve it. Possibly missed, under a testimony, lists
+  points the draft may have left out. They aren't in the note; use Add
+  argument for any that matter.
+- A ⚠ that starts with Audio check means Gemini listened to those seconds of
+  the recording and heard a different name or number than the transcript.
+  Listen, then fix the item or approve it.
+- If the queue shows Rebuild with the latest fixes on a hearing you haven't
+  reviewed yet, click it -> the draft is rebuilt with the app's newest fixes
+  from the saved AI reply. The second check may cost a few cents the first
+  time it runs on that hearing.
+- Need to name a questioner? Open Committee members near the top of the draft
+  -> the committee's members from malegislature.gov. A legislator's name that
+  isn't on the Legislature's member list is marked ⚠ with the closest spelling.
+- Read Other things to check at the end of the draft -> hearing-wide checks,
+  such as testimony the draft may have missed. Approve each one yourself.
+- Unmarked items are usually right but unchecked. Names are spelled the way
+  the transcript heard them: check each testifier's name and organization
+  against the hearing page or their written testimony, and listen to any
+  point with a number, percentage, dollar amount or date.
+- Click Approve everything not flagged -> the unflagged items are approved;
+  items marked ⚠ and Other things to check stay for you.
+- Keep clicking Next ⚠ -> once every ⚠ item is approved, it stops at blanks
+  the copied note still marks ⚠. Click Not applicable for someone speaking
+  for themselves, No response (comment only) for a comment nobody answered,
+  or No questions if none were asked; otherwise Edit and fill it in.
+- Scroll to the top, click Output, then Copy Hearing Notes -> the note is
+  copied. Any line still ending in ⚠ needs checking. Paste it into the
+  hearing's Notion page next to the existing notes; don't replace them.
+  Set the Hearing Notes and committee tags yourself.
+
+Stopping and getting back
+- Click Stop app (top right) -> the app stops. Wait about 15 seconds before
+  opening it again. Closing the browser tab alone doesn't stop the app.
+- Closed the tab without Stop app? In Safari, choose History and click the
+  newest Hearing Compiler -> the workspace comes back. If that page
+  can't connect, press Option-Command-Esc, choose Hearing Compiler, click
+  Force Quit, then open it again from Applications -> saved work is kept,
+  and a hearing that was processing shows Retry.
+
+Updates: when you open the app, it checks for a newer build. If nothing is
+processing, it installs the update and reopens in a new browser tab. Keep the
+old tab open until the new one appears. Keep the app in Applications for this
+to work. If an update doesn't install, download the latest release, drag it
+into Applications and choose Replace; saved work stays. The previous version
+is kept in ~/Library/Application Support/HearingCompilerPrototype/updates/previous/.
+The version and build number are shown at the top right of the window.
+
+Saved work: ~/Library/Application Support/HearingCompilerPrototype/
+Startup diagnostics: launcher.log in that folder.
+Back up saved work using Backup and recovery before changing installations.
+The source-checkout launcher uses a different workspace; it does not import
+or move saved work automatically.
+
+This test app is signed with the project's own certificate, not notarized by
+Apple, so macOS asks for the first-open approval above. Use only the app from
+the project's releases page. Do not disable Gatekeeper or remove security
+controls.
+
+Native CI startup/export/restart checks do not establish M5 hardware performance,
+actual MacWhisper Free operation, hearing accuracy or review effort. Drafts
+require source review. Manual Notion copy/export preserves existing notes.

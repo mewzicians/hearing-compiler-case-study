@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "description": "Qualified support, negated opposition and an ambiguous 'that bill' after two bill references.",
+  "hearing": {
+    "id": "mixed-position",
+    "title": "Sample Hearing E · Mixed positions",
+    "date": "2026-03-22",
+    "committee": "Example Cannabis Policy Committee",
+    "source_file": "sample_policy_2026-03-22.mp3"
+  },
+  "segments": [
+    {"id": "p01", "start": 10, "end": 18, "speaker": "Speaker 2", "text": "I'm Casey Brooks with Example Small Business Forum."},
+    {"id": "p02", "start": 20, "end": 30, "speaker": "Speaker 2", "text": "I support parts of H.4004, but its reporting requirements need changes."},
+    {"id": "p03", "start": 33, "end": 44, "speaker": "Speaker 2", "text": "I do not oppose S.5005, but I am not endorsing it."},
+    {"id": "p04", "start": 46, "end": 52, "speaker": "Speaker 2", "text": "H.4004 and S.5005 both concern notices."},
+    {"id": "p05", "start": 54, "end": 63, "speaker": "Speaker 2", "text": "That bill would require an annual report."},
+    {"id": "p06", "start": 65, "end": 76, "speaker": "Speaker 3", "text": "What would that bill require from smaller shops?"},
+    {"id": "p07", "start": 79, "end": 91, "speaker": "Speaker 2", "text": "An annual report, although I would need to check which version."}
+  ]
+}

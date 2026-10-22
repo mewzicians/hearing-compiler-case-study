@@ -1,0 +1,50 @@
+Hearing Compiler - local hearing workspace
+
+1. Extract this ZIP and double-click HearingCompilerPrototype.exe.
+2. Keep its console open. The local browser interface starts with an empty queue.
+3. Choose Add MP3 files or Choose folder; confirm titles, dates and committee.
+4. On Windows, attach a MacWhisper JSON, TXT, SRT or VTT export produced on the
+   Mac. Windows does not simulate or perform MacWhisper speech transcription.
+5. Open the draft and click validated timestamps to hear original audio.
+   TXT has no validated clocks or speaker turns; line clicks highlight source
+   text and audio is manually playable.
+6. Repair missed/false testimony, arguments or Q&A, then review and approve.
+   Evidence and speaker-link changes need review again. Shared testimony can
+   retain separate contributions. Local AI rich drafts keep all responses.
+7. Output can copy notes or export Word, Markdown and saved structured data.
+   Draft/unresolved labels remain visible until review is complete.
+8. Use Stop app when finished. Closing a browser tab alone does not stop it.
+9. Dark mode follows your system initially; the button remembers your choice.
+
+Import MacWhisper JSON and Import transcript JSON also remain available. If you
+import a transcript first, attach its original recording from the review screen.
+
+MacWhisper connection uses the installed mw tool on macOS and a selected local
+model. Pro activation belongs inside MacWhisper; this app does not request a
+separate MacWhisper credential. JSON export requires Pro and speaker detection
+must be supported by the model. The connection still needs a real Mac pilot.
+
+AI extraction:
+Choose rules or an installed local Ollama model in AI extraction. Use a literal
+loopback service address, normally http://127.0.0.1:11434. Installation/models
+are separate from this ZIP. No hosted fallback or API key is used. The final
+model is not selected: every admitted AI draft still needs human source review.
+
+Saved Windows work and recovery:
+%LOCALAPPDATA%\HearingCompilerPrototype
+Backup and recovery shows the actual path. Download a full workspace ZIP to a
+separate location; it includes state, transcripts, corrections and recordings.
+Restore only into an empty workspace. Note JSON exports exclude audio and are
+not full backup archives. Stop the app before copying its folder manually.
+For a separate destination, the executable supports:
+HearingCompilerPrototype.exe backup --state PATH --output NEW-BACKUP.zip
+HearingCompilerPrototype.exe restore NEW-BACKUP.zip --state NEW-EMPTY-PATH
+HearingCompilerPrototype.exe serve --state NEW-EMPTY-PATH --open
+Editing exported Word notes does not update the saved app review.
+The previous built-in sample rows are backed up locally before removal. Real
+imported work is retained. The executable contains no sample hearings or audio.
+
+No Python installation is needed; Word export's dependency is bundled. Word
+content is checked, but visual pagination still needs a recipient-reader check.
+Verify rule or AI drafts against transcript and recording before use. Private office
+and constituent material is outside this public-hearing workflow.

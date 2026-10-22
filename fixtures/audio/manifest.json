@@ -1,0 +1,45 @@
+{
+  "fixture_version": 1,
+  "synthetic": true,
+  "source": "local Windows SAPI",
+  "ground_truth": "Authored scripts and measured generated clip lengths, not ASR/MacWhisper output.",
+  "scripts_sha256": "feea0b5a1add2c418a5eff2b05da9f7bf731e5d213a7b06683c8fa92c26ef8f9",
+  "sample_rate": 16000,
+  "channels": 1,
+  "pcm_bits": 16,
+  "mp3_kbps": 64,
+  "inter_turn_silence_seconds": 0.5,
+  "voices": {
+    "Microsoft David Desktop": "Microsoft David Desktop - English (United States)",
+    "Microsoft Zira Desktop": "Microsoft Zira Desktop - English (United States)"
+  },
+  "manual_listening": "not performed by this automated generator",
+  "macwhisper_transcription": "not run",
+  "recordings": [
+    {
+      "filename": "explicit-support.mp3",
+      "bytes": 562752,
+      "sha256": "2c18d1373c26b841b9566bfb7b7eb0279124016422486addaaf4aa506a40feca",
+      "pcm_duration_seconds": 70.25,
+      "transcript": "explicit-support.json",
+      "transcript_sha256": "1f73cd0c67b7effc49af94ccafb93daf20cf6fdfef7f57d82b2d603667a8c9ac"
+    },
+    {
+      "filename": "multi-bill-conditional.mp3",
+      "bytes": 662112,
+      "sha256": "8fd360969a0c95aa924e87f7405406a563ed8074e05f99c96a2911d8ade34a30",
+      "pcm_duration_seconds": 82.685,
+      "transcript": "multi-bill-conditional.json",
+      "transcript_sha256": "81c8d4af40fd384c8d078f2a539b51baaa406c48bf60c897ad65d515897589e8"
+    },
+    {
+      "filename": "legislator-role-change.mp3",
+      "bytes": 633888,
+      "sha256": "c1eeb37501531eba6a294aa68099ec0b3b9956a30623313f4773b043a7bd5c5c",
+      "pcm_duration_seconds": 79.15,
+      "transcript": "legislator-role-change.json",
+      "transcript_sha256": "db16c4b42f450663ba2373ca0c13c1619f548b9379820ee0be383881cc42fd84"
+    }
+  ],
+  "total_mp3_bytes": 1858752
+}

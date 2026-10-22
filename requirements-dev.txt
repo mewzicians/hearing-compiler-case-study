@@ -1,0 +1,4 @@
+# Optional browser audit. Word export's runtime dependency is in requirements.txt.
+playwright==1.63.0
+# Generates temporary MP3 tones for playback audits; not an app dependency.
+lameenc==1.8.4

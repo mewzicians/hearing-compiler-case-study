@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "description": "The shared visual-design hearing: an introduced witness, explicit support, two arguments, and an unidentified question asker.",
+  "hearing": {
+    "id": "sample-hearing",
+    "title": "Sample Committee Hearing",
+    "date": "2026-03-18",
+    "committee": "Example Committee",
+    "source_file": "sample_hearing_2026-03-18.mp3"
+  },
+  "segments": [
+    {"id": "s01", "start": 4994, "end": 5008, "speaker": "Speaker 2", "text": "I'm Alex Morgan with Example Legal Services. I support H.1234."},
+    {"id": "s02", "start": 5010, "end": 5027, "speaker": "Speaker 2", "text": "The proposal would expand access to legal assistance. It would make eligibility easier to understand."},
+    {"id": "s03", "start": 5052, "end": 5061, "speaker": "Speaker 3", "text": "Who would qualify for assistance?"},
+    {"id": "s04", "start": 5068, "end": 5081, "speaker": "Speaker 2", "text": "Residents who meet the bill's income criteria."}
+  ]
+}

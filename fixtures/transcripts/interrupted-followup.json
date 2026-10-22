@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "description": "A question interrupted by the chair, a clarification before the answer, and a second follow-up with a separate response.",
+  "hearing": {
+    "id": "interrupted-followup",
+    "title": "Sample Hearing D · Follow-up questions",
+    "date": "2026-03-21",
+    "committee": "Example Committee",
+    "source_file": "sample_followup_2026-03-21.mp3"
+  },
+  "segments": [
+    {"id": "q01", "start": 10, "end": 15, "speaker": "Speaker 3", "text": "I'm Senator Rowan."},
+    {"id": "q02", "start": 20, "end": 27, "speaker": "Speaker 2", "text": "I'm Jordan Lee with Example Access Center."},
+    {"id": "q03", "start": 28, "end": 39, "speaker": "Speaker 2", "text": "I support H.3003 because the notice would explain the next steps."},
+    {"id": "q04", "start": 42, "end": 49, "speaker": "Speaker 3", "text": "How would that bill help people applying online?"},
+    {"id": "q05", "start": 50, "end": 55, "speaker": "Chair", "text": "Please move closer to the microphone."},
+    {"id": "q06", "start": 57, "end": 64, "speaker": "Speaker 3", "text": "Would the notice also describe the paper application route?"},
+    {"id": "q07", "start": 67, "end": 80, "speaker": "Speaker 2", "text": "Yes, it would explain both routes."},
+    {"id": "q08", "start": 83, "end": 89, "speaker": "Speaker 3", "text": "Who would translate the notice?"},
+    {"id": "q09", "start": 91, "end": 103, "speaker": "Speaker 2", "text": "The agency would arrange translation."},
+    {"id": "q10", "start": 104, "end": 114, "speaker": "Speaker 2", "text": "Community groups would review the translated draft."}
+  ]
+}

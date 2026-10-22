@@ -1,0 +1,18 @@
+* text=auto
+
+.gitattributes text eol=lf
+.gitignore text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.svg text eol=lf
+*.png binary
+*.yaml text eol=lf
+*.yml text eol=lf
+*.py text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.cmd text eol=crlf
+fixtures/audio/*.mp3 binary
+# Finder launchers keep Unix line endings on Windows checkouts too.
+*.command text eol=lf

@@ -1,0 +1,51 @@
+{
+  "note": "Independent facts and uncertainties for the fictional cases. Never used by the extractor.",
+  "sample-hearing": {
+    "witnesses": ["Alex Morgan"],
+    "positions": {"H.1234": "Support"},
+    "question_evidence": [["s03"]],
+    "response_evidence": [["s04"]],
+    "unknown_asker": true
+  },
+  "multiple-bills": {
+    "witnesses": ["Sam Rivera", "Taylor Park"],
+    "witness_positions": [
+      {"H.1001": "Support", "S.2002": "Oppose"},
+      {"H.1001": "Oppose"}
+    ],
+    "question_evidence": [["m06"]],
+    "response_evidence": [["m07"]],
+    "asker": "Representative Ellis"
+  },
+  "uncertain-testimony": {
+    "witnesses": [null],
+    "unknown_organization": true,
+    "unknown_bill": true,
+    "unknown_response": true,
+    "question_evidence": [["u04"]],
+    "minimum_issues": 4
+  },
+  "interrupted-followup": {
+    "witnesses": ["Jordan Lee"],
+    "positions": {"H.3003": "Support"},
+    "question_evidence": [["q04", "q06"], ["q08"]],
+    "response_evidence": [["q07"], ["q09", "q10"]],
+    "asker": "Senator Rowan"
+  },
+  "mixed-position": {
+    "witnesses": ["Casey Brooks"],
+    "positions": {"H.4004": "Unclear", "S.5005": "Unclear"},
+    "unknown_bill": true,
+    "question_evidence": [["p06"]],
+    "response_evidence": [["p07"]],
+    "unknown_question_bill": true
+  },
+  "no-questions": {
+    "witnesses": ["Riley Chen"],
+    "positions": {"H.6006": "Unclear"},
+    "unknown_organization": true,
+    "question_evidence": [],
+    "response_evidence": []
+  },
+  "broken-order": {"error_contains": "chronological order"}
+}
