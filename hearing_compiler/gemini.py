@@ -30,7 +30,7 @@ class GeminiError(Exception):
 
 
 INSTRUCTIONS = """You are drafting notes on a public Massachusetts legislative committee hearing for a
-legislative staffer. Her goal is to save listening time; she must be able to trust anything
+legislative intern. Her goal is to save listening time; she must be able to trust anything
 you do not flag. Work only from the transcript{agenda_scope} below.
 
 The transcript came from automatic speech recognition (Whisper). It has no reliable speaker labels

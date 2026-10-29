@@ -852,8 +852,8 @@ class DraftRepairTests(unittest.TestCase):
         prompts = [gemini.build_prompt(cues, document["hearing"], bills), gemini.build_prompt(cues, document["hearing"])]
         # A saved reply is found by sha256(model + prompt); any change to the prompt text pays for a new draft.
         self.assertEqual([hashlib.sha256(p.encode("utf-8")).hexdigest() for p in prompts],
-                         ["b170f33191edbf984c825abc2f6846abb4e219e82cb103af0ced0ffbb4b153cc",
-                          "4671e4815507c461e3fd92e6d5336f99ee1a9d0306139cac058d9e09bc5f3066"])
+                         ["807df821f891cdbcc3dd39038e19b745516e89159541bdba9a927eed7606cfcf",
+                          "4ee61c2b9ffb06e8d9de4a024b868fd8047c516e9b34bdd6330b1e3d892cac86"])
 
     def test_bill_only_entries_give_their_bills_to_the_testimony_over_the_same_cues(self):
         from hearing_compiler.rich_review import agenda_titles

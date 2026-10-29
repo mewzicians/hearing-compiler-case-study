@@ -19,9 +19,10 @@ reviewing them only has to listen where it matters.
 
 [**Case study**](#the-problem) · [**Evaluation**](docs/EVALUATION.md) · [**Architecture**](docs/ARCHITECTURE.md) · [**Decisions**](docs/DECISIONS.md) · [**Code**](hearing_compiler/)
 
-> **This is a portfolio case study.** The app is in real use by one legislative staff member. This
-> repository is a cleaned copy of its code: real hearings, reviews and people are replaced by synthetic
-> examples, and internal project records are left out. Screenshots use a synthetic hearing.
+> **This is a portfolio case study.** I built the app for a friend on a legislative internship, and she
+> uses it in her real work. This repository is a cleaned copy of its code: real hearings, reviews and
+> people are replaced by synthetic examples, and internal project records are left out. Screenshots use
+> a synthetic hearing.
 
 ## How it fits together
 
@@ -45,9 +46,9 @@ can only **add** ⚠ flags, and a person approves each item before it reaches th
 
 ## The problem
 
-A staff member takes structured notes on public committee hearings: who testified, on which bill,
-for or against, their main arguments, and the legislators' questions and answers. Hearings run two to
-four hours, often with dozens of testimonies, and there's a year-long backlog.
+My friend, a legislative intern, takes structured notes on public committee hearings: who testified, on
+which bill, for or against, their main arguments, and the legislators' questions and answers. Hearings
+run two to four hours, often with dozens of testimonies, and there's a year-long backlog.
 
 Listening to everything is slow. Trusting an AI summary blindly is worse: a wrong name, bill or position
 in the notes is a real mistake. The goal was to **cut listening time without lowering trust in the notes.**
