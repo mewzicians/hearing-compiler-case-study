@@ -23,6 +23,8 @@ reviewing them only has to listen where it matters.
 > uses it in her real work. This repository is a cleaned copy of its code: real hearings, reviews and
 > people are replaced by synthetic examples, and internal project records are left out. Screenshots use
 > a synthetic hearing.
+>
+> It's a snapshot of build 35 (October 22, 2026) and isn't kept in sync with the private code.
 
 ## How it fits together
 
